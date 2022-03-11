@@ -1,47 +1,72 @@
-//animals that we consume
+//different ways of saying pet
 let animals = [{
-  name: "cows"
+  name: "dearest"
 }, {
-  name: "pigs"
+  name: "loved"
 }, {
-  name: "chicken"
+  name: "pets"
 }, {
-  name: "fish"
+  name: "precious"
 }, {
-  name: "crab"
+  name: "friends"
 }, {
-  name: "squid"
+  name: "companion"
 }, {
-  name: "lobster"
+  name: "fur ball"
+}];
+//different adjectives
+let adj = [{
+  describe: "happy"
+}, {
+  describe: "loyal"
+}, {
+  describe: "go lucky"
+}, {
+  describe: "cute"
+}, {
+  describe: "fluffy"
+}, {
+  describe: "adorable"
 }];
 
-let randomIndex;
+
+let randomIndex
+let randomAdjective
 
 function setup() {
   createCanvas(400, 400);
   background(220);
   textSize(20);
   push()
-  textSize(10)
-  text("Our servings to you in order", 200, 200);
+  textSize(15)
+  textAlign(CENTER);
+  text("click to generate a company cover name ", 200, 200);
+  textAlign(CENTER);
+  text("with a color theme", 200, 220);
   pop()
 
 
 }
 
+
+
 function draw() {
 
+};
 
-}
+
+
+
+
 
 function mousePressed() {
-  if (animals[0]) {
-    background(random(255), random(255), random(255));
-    randomIndex = int(random(animals.length))
-    text(animals[randomIndex].name, 200, 200);
-    animals.splice(randomIndex, 1);
-  } else {
-    background(random(255), random(255), random(255));
-    text("enjoy", 200, 200);
-  }
+  background(random(255) + 10, random(255) + 10, random(255) + 10);
+  randomIndex = int(random(animals.length))
+  randomAdjective = int(random(adj.length))
+  wrd();
+  //    animals.splice(randomIndex, 1);
+}
+
+function wrd() {
+  text(adj[randomAdjective].describe + ' ' + animals[randomIndex].name, 200, 200);
 }
